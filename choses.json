@@ -1,0 +1,28 @@
+{
+  "chores": [
+    {
+      "name": "Kitchen Floors",
+      "assignedTo": ["Dhruv", "Nidhi"],
+      "count": {
+        "Dhruv": 3,
+        "Nidhi": 2
+      }
+    },
+    {
+      "name": "Kitchen Table",
+      "assignedTo": ["Nidhi", "Arshika"],
+      "count": {
+        "Nidhi": 2,
+        "Arshika": 1
+      }
+    },
+    {
+      "name": "Trash",
+      "assignedTo": ["Arshika", "Dhruv"],
+      "count": {
+        "Arshika": 3,
+        "Dhruv": 1
+      }
+    }
+  ]
+}
