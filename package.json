@@ -12,6 +12,9 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -38,8 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://dhruv0000.github.io/chore-tracker",
-  "devDependencies": {
-    "gh-pages": "^6.2.0"
-  }
+  "homepage": "https://dhruv0000.github.io/chore-tracker"
 }

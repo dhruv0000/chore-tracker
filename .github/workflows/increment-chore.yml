@@ -1,0 +1,26 @@
+
+name: Increment Chore Count
+
+on:
+  repository_dispatch:
+    types: [increment-chore]
+
+jobs:
+  update-count:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update Chore Count
+        run: |
+          content=$(cat chores.json)
+          person="${{ github.event.client_payload.person }}"
+          chore="${{ github.event.client_payload.chore }}"
+          newContent=$(echo "$content" | jq --arg chore "$chore" --arg person "$person" '(.chores[] | select(.name == $chore).count[$person]) |= (. + 1)')
+          echo "$newContent" > chores.json
+      - name: Commit changes
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add chores.json
+          git commit -m "Increment chore count for ${{ github.event.client_payload.person }}"
+          git push

@@ -6,7 +6,7 @@ export function useChoreData() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://raw.githubusercontent.com/dhruv0000/household-chore-tracker/refs/heads/main/choses.json')
+    fetch('https://raw.githubusercontent.com/dhruv0000/chore-tracker/refs/heads/main/choses.json')
       .then(res => res.json())
       .then(data => {
         const peopleMap = new Map();
